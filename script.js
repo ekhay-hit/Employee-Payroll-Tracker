@@ -3,8 +3,7 @@ const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
 // Collect employee data
 const collectEmployees = function () {
-  // TODO: Get user input to create and return an array of employee objects
-
+  // Get user input to create and return an array of employee objects
   // array to store employees objects
   const employees = [];
 
@@ -14,7 +13,7 @@ const collectEmployees = function () {
   while (condition) {
     // Retrieve and store employee first name
     const fstName = prompt("Enter first name:");
-    //Retrieve store employee last name
+    //Retrieve and store employee last name
     const lstName = prompt("Enter last name:");
     // store employee first name
     let slry = prompt("Enter salary:");
@@ -32,41 +31,24 @@ const collectEmployees = function () {
     // push the new object to employees array
     employees.push(newEmployee);
 
-    // console log use for debugging
-
-    // console.log(
-    //   ` first name: ${employees[i].firstName} last name is: ${employees[i].lastName} salary is:  ${employees[i].salary}`
-    // );
-
     // increase the index
     i++;
-    // prompt for the user if wants to add more employees
-    let verify = prompt("Do you want to add anther employe", "yes");
-
-    // console.log(verify);
-    // console.log(typeof(verify));
-
-    // verify if the user clicked cancel if true set the condition to false to exit the loop
-    if (verify === null) condition = false;
-
-    // console.log("Condition is: " + typeof(condition));
-    // }else if(verify == 'yes'){
-    //   condition =true;
+    // prompt for the user if wants to add more employees and set it to loop condition
+    condition = confirm("Do you want to add anther employe");
   }
 
-  // console.log("I am here next to return")
+  // return the array of objects
   return employees;
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average
+  //  Calculate and display the average
   // declairing sum varaible
   let sum = 0;
-  // looping throgh the array and sum up salaries
+  // looping through the array and sum up salaries
   for (let i = 0; i < employeesArray.length; i++) {
     sum += employeesArray[i].salary;
-    //  console.log(`the sum in ${i} is ${sum}`);
   }
   // calculate the average
   let average = sum / employeesArray.length;
@@ -81,9 +63,9 @@ const displayAverageSalary = function (employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
+  // Select and display a random employee
   const random = Math.floor(Math.random() * employeesArray.length);
-  // console.log(`random is ${random}`);
+
   // return result
   return console.log(
     `Congratulations to ${employeesArray[random].firstName} ${employeesArray[random].lastName}, our random drawing winner`
