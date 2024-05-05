@@ -6,16 +6,15 @@ const collectEmployees = function () {
   // Get user input to create and return an array of employee objects
   // array to store employees objects
   const employees = [];
-
-  let i = 0;
+  // decaliring the condition for the loop
   let condition = true;
   // while the condition is true do this
   while (condition) {
-    // Retrieve and store employee first name
+    //prompt for employee first name and store it in the varaible fstName
     const fstName = prompt("Enter first name:");
-    //Retrieve and store employee last name
+    //prompt for employee last name and store it in the varaible lstName
     const lstName = prompt("Enter last name:");
-    // store employee first name
+    // //prompt for employee salary and store it in the varaible slry
     let slry = prompt("Enter salary:");
     // verify that salary is a number if not loop and prompt till a number is entered
     while (Number(slry) % 1 !== 0) {
@@ -31,8 +30,6 @@ const collectEmployees = function () {
     // push the new object to employees array
     employees.push(newEmployee);
 
-    // increase the index
-    i++;
     // prompt for the user if wants to add more employees and set it to loop condition
     condition = confirm("Do you want to add anther employe");
   }
